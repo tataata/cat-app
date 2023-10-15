@@ -1,0 +1,30 @@
+.card {
+  --bs-card-bg: rgba(255, 255, 255, 0.6) !important;
+  max-width: 400px;
+  margin: 0 auto 2em;
+  border: 0;
+  text-align: center;
+}
+
+.card img {
+  margin-bottom: 1rem;
+}
+
+.card p {
+  margin-bottom: 0.25rem;
+}
+
+.card button {
+  margin-top: 1rem;
+}
+
+.btn-custom {
+  --bs-btn-bg: rgb(87, 63, 16) !important;
+  --bs-btn-border-color: rgb(87, 63, 16) !important;
+  --bs-btn-hover-bg: rgb(63, 43, 4) !important;
+  --bs-btn-hover-border-color: rgb(63, 43, 4) !important;
+  --bs-btn-active-bg: rgb(45, 31, 1) !important;
+  --bs-btn-active-border-color: rgb(45, 31, 1) !important;
+  --bs-btn-disabled-bg: rgb(119, 115, 106) !important;
+  --bs-btn-disabled-border-color:  rgb(119, 115, 106) !important;
+}

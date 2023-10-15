@@ -1,0 +1,10 @@
+:root,
+[data-bs-theme=light] {
+  --bs-body-bg: #b8b6b0;
+  --bs-border-radius: 0;
+  --bs-btn-bg: #614b2d;
+}
+
+#root {
+  max-width: 1080px;
+}
