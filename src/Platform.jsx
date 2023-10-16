@@ -2,6 +2,7 @@ import { useState } from 'react'
 
 import Cards from './Cards'
 import PlaydateList from './playdateList'
+import Special from './Special'
 
 
 let tom = {
@@ -9,7 +10,8 @@ let tom = {
   description: 'Very playful cat',
   age: '1 year',
   location: 'Bilbao, Spain',
-  photoURI: 'http://placekitten.com/300/300'
+  photoURI: 'http://placekitten.com/300/300',
+  special: true
 }
 
 let jerry = {
@@ -17,7 +19,8 @@ let jerry = {
   description: 'Very colorful cat',
   age: '3 years',
   location: 'Porto Alegre, Brazil',
-  photoURI: 'http://placekitten.com/300/200'
+  photoURI: 'http://placekitten.com/300/200',
+  special: false
 }
 
 let miran = {
@@ -25,7 +28,8 @@ let miran = {
   description: 'Very wise cat',
   age: '11 years',
   location: 'Kuala Lumpur, Malaysia',
-  photoURI: 'http://placekitten.com/300/340'
+  photoURI: 'http://placekitten.com/300/340',
+  special: true
 }
 
 let sudo = {
@@ -33,7 +37,8 @@ let sudo = {
   description: 'Very rebellious cat',
   age: '4 years',
   location: 'Denver, USA',
-  photoURI: 'http://placekitten.com/300/290'
+  photoURI: 'http://placekitten.com/300/290',
+  special: false
 }
 
 let milk = {
@@ -41,7 +46,8 @@ let milk = {
   description: 'Very gentle cat',
   age: '2 years',
   location: 'Cairo, Egypt',
-  photoURI: 'http://placekitten.com/300/330'
+  photoURI: 'http://placekitten.com/300/330',
+  special: false
 }
 
 
@@ -73,6 +79,12 @@ function Platform() {
     setPlaydate(filteredPlaydate)
   }
   
+  
+  // Filter cats not special
+  let regularCats = cats.filter(cat => cat.special === false)
+  // Filter cats on sale
+  let specialCats = cats.filter(cat => cat.special === true)
+  
 
   return (
     <> 
@@ -81,9 +93,11 @@ function Platform() {
       {/* Add counter with  amount of cats on the platform */}
       <p>We have {cats.length} cats registered on our plaform.</p>
 
-      <Cards cats={cats} bookPlaydate={bookPlaydate} />
+      {/* Update the reference for the props  */}
+      <Cards cats={regularCats} bookPlaydate={bookPlaydate} />
 
-      {/* <ShoppingCart cartItems = {cart}/> */}
+      {/* Special: pass only filtered  data */}
+      <Special cats={specialCats} bookPlaydate={bookPlaydate} />
 
     </>
   )
