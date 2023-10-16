@@ -58,14 +58,26 @@ function Platform() {
     // This does not work: playdate.push(clickedItem)
     // change state with setPlaydate
     setPlaydate([ 
-      ...playdate, 
-      clickedItem 
+      
+      clickedItem,
+      ...playdate,
     ])
   }
 
+  // Remove an item from the playdate list
+  const cancelPlaydate = (indexOfItemToRemove) => {
+    // Chanage state of playdate
+    console.log('clicked', indexOfItemToRemove);
+    let filteredPlaydate = playdate.filter((item, index) => {
+      return index !== indexOfItemToRemove
+    })
+    setPlaydate(filteredPlaydate)
+  }
+  
+
   return (
     <> 
-      <PlaydateList playdate={playdate} />
+      <PlaydateList playdate={playdate} cancelPlaydate={cancelPlaydate} />
 
       {/* Add counter with  amount of cats on the platform */}
       <p>We have {cats.length} cats registered on our plaform.</p>
