@@ -1,5 +1,5 @@
 import { useState } from 'react'
-
+import Badge from 'react-bootstrap/Badge';
 import Cards from './Cards'
 import PlaydateList from './playdateList'
 import Special from './Special'
@@ -79,7 +79,7 @@ function Platform() {
     setPlaydate(filteredPlaydate)
   }
   
-  
+
   // Filter cats not special
   let regularCats = cats.filter(cat => cat.special === false)
   // Filter cats on sale
@@ -88,10 +88,11 @@ function Platform() {
 
   return (
     <> 
-      <PlaydateList playdate={playdate} cancelPlaydate={cancelPlaydate} />
-
       {/* Add counter with  amount of cats on the platform */}
-      <p>We have {cats.length} cats registered on our plaform.</p>
+      <p><Badge pill bg="secondary">We have <strong>{cats.length}</strong> cats registered on our plaform.</Badge></p>
+      
+      {/* Show playdate list if playdates exist */}
+      {playdate.length ? <PlaydateList playdate={playdate} cancelPlaydate={cancelPlaydate} />  : <></>}
 
       {/* Update the reference for the props  */}
       <Cards cats={regularCats} bookPlaydate={bookPlaydate} />

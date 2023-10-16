@@ -13,7 +13,7 @@ function Card(props) {
                 <h3>{props.cat.name}</h3>
                 <p><em>{props.cat.description}</em></p>
                 {/* Conditional rendering: If the cat has special flag, display a text "Special mention" */}
-                { props.cat.special ? (<p> <Badge pill bg="secondary">Special mention</Badge> </p>): <></> }
+                { props.cat.special ? (<p> <Badge pill bg="warning">Special mention</Badge> </p>): <></> }
 
                 <p>{props.cat.age}</p>
                 <p>{props.cat.location}</p>
