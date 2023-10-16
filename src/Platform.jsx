@@ -58,9 +58,8 @@ function Platform() {
     // This does not work: playdate.push(clickedItem)
     // change state with setPlaydate
     setPlaydate([ 
-      
-      clickedItem,
-      ...playdate,
+      ...playdate, 
+      clickedItem 
     ])
   }
 
