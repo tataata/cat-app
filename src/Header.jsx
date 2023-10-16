@@ -8,7 +8,7 @@ function Header() {
         <Row>
           <Col>
             <header>
-              <h1>My cat community</h1>
+              <h1>Playful cat community</h1>
             </header>
           </Col>
         </Row>

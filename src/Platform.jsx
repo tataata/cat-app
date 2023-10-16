@@ -48,18 +48,32 @@ let milk = {
 function Platform() {
   // create a state for the cards
   const [ cats ] = useState([ tom, jerry, miran, sudo, milk ])
-  const [ playdates ] = useState([ milk ])
+  // const [ playdate ] = useState([ milk, miran ])
+  const [ playdate, setPlaydate ] = useState([])
+
+  // Function: add item to the cart state
+  // Pass this function to Card - Button
+  const bookPlaydate = (clickedItem) => {
+    // add clicked item to the array playdate
+    // This does not work: playdate.push(clickedItem)
+    // change state with setPlaydate
+    setPlaydate([ 
+      ...playdate, 
+      clickedItem 
+    ])
+  }
 
   return (
     <> 
+      <PlaydateList playdate={playdate} />
+
       {/* Add counter with  amount of cats on the platform */}
       <p>We have {cats.length} cats registered on our plaform.</p>
 
-      <Cards cats={cats} />
+      <Cards cats={cats} bookPlaydate={bookPlaydate} />
 
       {/* <ShoppingCart cartItems = {cart}/> */}
 
-      <PlaydateList playDates = {playdates} />
     </>
   )
 }

@@ -13,7 +13,14 @@ function Card(props) {
                 <p><em>{props.cat.description}</em></p>
                 <p>{props.cat.age}</p>
                 <p>{props.cat.location}</p>
-                <Button variant="primary" className="btn-custom">Book a playdate</Button>{' '}
+                <Button 
+                    variant="primary" 
+                    className="btn-custom"
+                    id={props.cat.name} 
+                    onClick={()=>{props.bookPlaydate(props.cat)}}
+                    >
+                        Book a playdate
+                </Button>{' '}
             </article>
         </Col>
     )
