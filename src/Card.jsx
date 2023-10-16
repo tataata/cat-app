@@ -1,4 +1,5 @@
 import Button from 'react-bootstrap/Button'
+import Badge from 'react-bootstrap/Badge'
 import './Card.css'
 import Col from 'react-bootstrap/Col'
 
@@ -11,6 +12,9 @@ function Card(props) {
                 <img src={props.cat.photoURI} />
                 <h3>{props.cat.name}</h3>
                 <p><em>{props.cat.description}</em></p>
+                {/* Conditional rendering: If the cat has special flag, display a text "Special mention" */}
+                { props.cat.special ? (<p> <Badge pill bg="secondary">Special mention</Badge> </p>): <></> }
+
                 <p>{props.cat.age}</p>
                 <p>{props.cat.location}</p>
                 <Button 
