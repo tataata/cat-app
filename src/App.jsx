@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Header from './Header'
 import Footer from './Footer'
-import Cards from './Cards'
+import Cards from './Platform'
 // Styles: bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css'
 // Styles: custom
